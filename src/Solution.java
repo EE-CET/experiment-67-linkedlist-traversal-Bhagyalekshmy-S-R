@@ -6,32 +6,35 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Read the integer N
         int N = scanner.nextInt();
         
-        // Create a LinkedList of Integers
         LinkedList<Integer> list = new LinkedList<>();
-        
-        // Read N integers and add them to the LinkedList
         for (int i = 0; i < N; i++) {
             list.add(scanner.nextInt());
         }
         
-        // Create a ListIterator for the LinkedList
         ListIterator<Integer> iterator = list.listIterator();
         
-        // Traverse forward
+        // Forward Traversal (no trailing space)
         System.out.print("Forward: ");
         while (iterator.hasNext()) {
-            System.out.print(iterator.next() + " ");
+            int value = iterator.next();
+            System.out.print(value);
+            if (iterator.hasNext()) {
+                System.out.print(" ");
+            }
         }
         
         System.out.println();
         
-        // Traverse backward
+        // Backward Traversal (no trailing space)
         System.out.print("Backward: ");
         while (iterator.hasPrevious()) {
-            System.out.print(iterator.previous() + " ");
+            int value = iterator.previous();
+            System.out.print(value);
+            if (iterator.hasPrevious()) {
+                System.out.print(" ");
+            }
         }
         
         scanner.close();
